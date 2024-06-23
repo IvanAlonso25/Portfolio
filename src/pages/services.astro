@@ -1,0 +1,32 @@
+---
+import Menu from "../components/Menu.astro";
+import TitlePage from "../components/TitlePage.astro";
+import CardService from "../components/CardService.astro";
+
+const services = [
+    {
+        titulo:"Web Development",
+        desc:"As a web developer, I specialize in building fast and modern websites using Astro. With a focus on performance and SEO, Astro allows me to create static sites that are incredibly efficient and easy to maintain. My expertise in front-end technologies, combined with Astro capabilities, enables me to deliver top-notch user experiences. I am dedicated to continuous learning and keeping up with the latest trends to provide the best solutions for my clients.",
+    },
+    {
+        titulo:"Mobile Development",
+        desc:"As a mobile app developer, I specialize in creating high-quality, cross-platform applications using Flutter and Dart. With Flutter robust framework and Dart powerful language features, I can build fast, responsive, and visually appealing apps for both iOS and Android. My focus is on delivering seamless user experiences and maintaining high code quality. I am dedicated to continuous learning and staying updated with the latest trends to provide the best possible solutions for my clients.",
+    },
+    {
+        titulo:"Data Analytics",
+        desc:"As a mobile app development consultant, I specialize in guiding businesses to create high-quality, cross-platform applications using Flutter and Dart. My focus is on delivering seamless user experiences and ensuring high code quality. I am dedicated to continuous learning and staying updated with the latest trends to provide the best possible solutions for my clients.",
+    }
+];
+---
+
+<Menu />
+<section class="bg-gray-200 pt-20 pb-28 px-8">
+    <div class="max-w-6xl mx-auto">
+        <TitlePage title="Services" subtitle="Here's what IO offer" />
+        <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+            {services.map(
+                (item) => <CardService title={item.titulo} desc={item.desc}/>)
+            }
+        </div>
+    </div>
+</section>
